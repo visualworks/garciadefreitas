@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "0.9.5.4",
+    "version": "0.9.6",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -164,6 +164,10 @@
         "wp-.*\\.php",
         "index\\.php"
     ],
+    "pgcache.reject.categories": [],
+    "pgcache.reject.tags": [],
+    "pgcache.reject.authors": [],
+    "pgcache.reject.custom": [],
     "pgcache.reject.ua": [
         ""
     ],
@@ -197,6 +201,32 @@
     "pgcache.prime.limit": "10",
     "pgcache.prime.sitemap": "",
     "pgcache.prime.post.enabled": "0",
+    "pgcache.cookiegroups.enabled": false,
+    "pgcache.cookiegroups.groups": {
+        "mobile": {
+            "enabled": false,
+            "cache": true,
+            "cookies": [
+                "wptouch-pro-view=mobile",
+                "wptouch-pro-cache-state=mobile"
+            ]
+        },
+        "loggedin": {
+            "enabled": false,
+            "cache": true,
+            "cookies": [
+                "wordpress_logged_in_.*"
+            ]
+        },
+        "subscribers": {
+            "enabled": false,
+            "cache": true,
+            "cookies": [
+                "role=subscriber",
+                "role=member"
+            ]
+        }
+    },
     "stats.enabled": "0",
     "minify.configuration_overloaded": false,
     "minify.enabled": "0",
@@ -328,6 +358,8 @@
     "cdn.autoupload.enabled": "0",
     "cdn.autoupload.interval": "3600",
     "cdn.canonical_header": false,
+    "cdn.admin.media_library": "0",
+    "cdn.cors_header": "1",
     "cdn.ftp.host": "",
     "cdn.ftp.type": "",
     "cdn.ftp.user": "",
@@ -349,12 +381,14 @@
     "cdn.s3.key": "",
     "cdn.s3.secret": "",
     "cdn.s3.bucket": "",
+    "cdn.s3.bucket.location": "us-east-1",
     "cdn.s3.cname": [],
     "cdn.s3.ssl": "auto",
     "cdn.s3_compatible.api_host": "auto",
     "cdn.cf.key": "AKIAJAHPLGFD63EDAIMQ",
     "cdn.cf.secret": "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",
-    "cdn.cf.bucket": "vw-garciadefreitas",
+    "cdn.cf.bucket": "garciadefreitas.com.br",
+    "cdn.cf.bucket.location": "us-east-1",
     "cdn.cf.id": "d2visa08m0ja6l",
     "cdn.cf.cname": [
         "www.garciadefreitas.com.br"
@@ -386,13 +420,6 @@
     "cdn.azure.ssl": "auto",
     "cdn.mirror.domain": [],
     "cdn.mirror.ssl": "auto",
-    "cdn.netdna.alias": "",
-    "cdn.netdna.consumerkey": "",
-    "cdn.netdna.consumersecret": "",
-    "cdn.netdna.authorization_key": "",
-    "cdn.netdna.domain": [],
-    "cdn.netdna.ssl": "auto",
-    "cdn.netdna.zone_id": 0,
     "cdn.maxcdn.authorization_key": "",
     "cdn.maxcdn.domain": [],
     "cdn.maxcdn.ssl": "auto",
@@ -434,6 +461,9 @@
         "{plugins_dir}\/wp-fb-autoconnect\/facebook-platform\/channel.html"
     ],
     "cdn.reject.ssl": "0",
+    "cdnfsd.enabled": false,
+    "cdnfsd.engine": "",
+    "cdnfsd.debug": false,
     "varnish.configuration_overloaded": false,
     "varnish.enabled": "0",
     "varnish.debug": false,
@@ -637,7 +667,6 @@
             ]
         }
     },
-    "common.edge": false,
     "common.support": "",
     "common.track_usage": "1",
     "common.tweeted": false,
@@ -647,6 +676,7 @@
     "widget.latest_news.items": 5,
     "widget.pagespeed.enabled": "1",
     "widget.pagespeed.key": "",
+    "widget.pagespeed.key.restrict.referrer": "",
     "widget.pagespeed.show_in_admin_bar": "0",
     "timelimit.email_send": 180,
     "timelimit.varnish_purge": 300,
@@ -670,7 +700,19 @@
     "extensions.active_frontend": [],
     "plugin.license_key": "",
     "plugin.type": "",
+    "cdn.netdna.alias": "",
+    "cdn.netdna.consumerkey": "",
+    "cdn.netdna.consumersecret": "",
+    "cdn.netdna.authorization_key": "",
+    "cdn.netdna.domain": [],
+    "cdn.netdna.ssl": "auto",
+    "cdn.netdna.zone_id": 0,
+    "common.edge": false,
     "fragmentcache": {
         "engine": ""
+    },
+    "pgcache.bad_behavior_path": "",
+    "newrelic": {
+        "monitoring_type": "apm"
     }
 }
